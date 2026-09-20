@@ -1,0 +1,85 @@
+.timeline {
+  list-style: none;
+  margin: 0 0 60px;
+  padding: 0;
+  border-left: 1px solid var(--border);
+}
+
+.timeline__item {
+  position: relative;
+  padding: 0 0 46px 34px;
+}
+
+.timeline__item:last-child { padding-bottom: 0; }
+
+.timeline__marker {
+  position: absolute;
+  left: -5.5px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.12);
+}
+
+.timeline__period {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--purple);
+}
+
+.timeline__content h3 {
+  margin-top: 8px;
+  font-size: 1.08rem;
+}
+
+.timeline__place {
+  margin-top: 6px;
+  font-size: 0.92rem;
+}
+
+.timeline__points {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.timeline__points li {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.certifications {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 32px;
+}
+
+.certification {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.certification__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--purple);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.certification h4 {
+  font-size: 0.98rem;
+}
+
+.certification p {
+  margin-top: 4px;
+  font-size: 0.86rem;
+}

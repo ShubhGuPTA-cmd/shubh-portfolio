@@ -1,0 +1,104 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar--scrolled {
+  background: rgba(8, 8, 14, 0.82);
+  backdrop-filter: blur(10px);
+  border-bottom-color: var(--border);
+}
+
+.navbar__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__mark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  border: 1px solid var(--border);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 34px;
+}
+
+.navbar__links a {
+  font-size: 0.92rem;
+  color: var(--muted);
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.navbar__links a:hover { color: var(--text); }
+
+.navbar__cta {
+  font-size: 0.88rem;
+  padding: 9px 20px;
+  border: 1px solid var(--purple-dim);
+  border-radius: 999px;
+  color: var(--text);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.navbar__cta:hover {
+  background: rgba(139, 92, 246, 0.12);
+  border-color: var(--purple);
+}
+
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 28px;
+}
+
+.navbar__toggle span {
+  height: 1.5px;
+  background: var(--text);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.navbar__toggle.is-open span:first-child { transform: translateY(3.5px) rotate(45deg); }
+.navbar__toggle.is-open span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+
+.navbar__mobile {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 22px 24px;
+  background: rgba(8, 8, 14, 0.96);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar__mobile a {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+}
+
+@media (max-width: 860px) {
+  .navbar__links { display: none; }
+  .navbar__cta { display: none; }
+  .navbar__toggle { display: flex; }
+  .navbar__inner { padding: 18px 22px; }
+}
