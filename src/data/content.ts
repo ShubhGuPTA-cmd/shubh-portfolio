@@ -29,7 +29,7 @@ export const about = {
 export const skillGroups = [
   { title: 'Languages', skills: ['Python', 'Java', 'C', 'SQL'] },
   { title: 'AI / ML', skills: ['Machine Learning', 'Data Analysis', 'NLP', 'AI/ML Fundamentals'] },
-  { title: 'Development', skills: ['Application Development', 'Full-Stack Development', 'CRUD Operations', 'Role-Based Access'] },
+  { title: 'Development', skills: ['Application Development', 'Full-Stack Development', 'REST APIs', 'CRUD Operations', 'Role-Based Access'] },
   { title: 'Database', skills: ['MySQL', 'Relational Database Design', 'Transactions'] },
   { title: 'Currently Exploring', skills: ['Deep Learning', 'Generative AI', 'Computer Vision', 'Advanced ML', 'Cloud'] },
 ]
@@ -45,6 +45,14 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: 'Resume Matcher — AI Resume-to-JD Screener',
+    description:
+      'NLP tool that scores how well a resume matches a job description. Embeds both texts with a sentence-transformers model (all-MiniLM-L6-v2) and compares them via cosine similarity to produce a 0-100 match score, then cross-references a skill taxonomy to flag skills present in the JD but missing from the resume. PDF parsing via PyPDF2, interactive UI built with Streamlit.',
+    tech: ['Python', 'sentence-transformers', 'scikit-learn', 'Streamlit', 'NLP'],
+    live: 'https://resume-matcherz.streamlit.app',
+    featured: true,
+  },
+  {
     name: 'Titanic Survival Prediction — Naive Bayes Classifier',
     description:
       'End-to-end ML pipeline on the Titanic dataset: EDA, missing-value imputation, one-hot encoding, and feature scaling with pandas and NumPy. Trained a Gaussian Naive Bayes classifier achieving 78.2% accuracy (0.73 precision, 0.70 recall, 0.71 F1) on a stratified 80/20 train-test split, with survival patterns and model performance visualized via Matplotlib/Seaborn.',
@@ -58,7 +66,6 @@ export const projects: Project[] = [
       'Full-stack web application using JSP and Servlets for the presentation and controller layers, with JDBC handling direct SQL interaction against a MySQL backend. Role-based access for admins and users across the full complaint lifecycle, with a normalized relational schema and parameterized JDBC queries for reliable storage and retrieval. Potential AI/ML extension: NLP-based auto-categorization and urgency scoring of incoming complaints.',
     tech: ['Java', 'JSP/Servlets', 'JDBC', 'MySQL'],
     github: 'https://github.com/ShubhGuPTA-cmd/Online-Complaint-System',
-    featured: true,
   },
   {
     name: 'Airline Management System',
@@ -92,6 +99,7 @@ export const timeline = [
 
 export const certifications = [
   { name: 'Oracle Certified — Java SE 21', issuer: 'Oracle', year: '' },
+  { name: 'Programming in Java — NPTEL', issuer: 'IIT Kharagpur (Elite, 71%)', year: 'Jul–Oct 2025' },
   { name: 'Tata GenAI Powered Data Analytics Job Simulation', issuer: 'Forage', year: 'Sept 2026' },
 ]
 
