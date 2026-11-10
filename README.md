@@ -1,42 +1,128 @@
 # Shubh Gupta — Portfolio
 
-A 3D-accented personal portfolio built with React, TypeScript, React Three Fiber, and GSAP.
+A personal portfolio website with an interactive 3D hero, built to showcase my work in AI/ML and software development.
 
-## Run it locally
+**Live site:** [shubh-gupta.vercel.app](https://shubh-gupta.vercel.app)
+
+## About
+
+I'm a B.Tech CSE (AI & ML) student at SRM Institute of Science & Technology, Kattankulathur (expected 2028). This site brings together my background, skills, projects, education, and certifications in one place.
+
+## Features
+
+- Interactive 3D hero: a rotating wireframe sphere and neural-network node graph that responds to mouse movement (React Three Fiber)
+- Dark, futuristic theme with purple and cyan accents
+- Smooth entrance animation on load (GSAP)
+- Animated count-up stats in the About section
+- Sections for About, Skills, Projects, Education and Certifications, and Contact
+- Downloadable resume
+- Fully responsive, with a mobile navigation menu
+- Respects the `prefers-reduced-motion` setting
+- All content lives in a single data file, so updates never touch component code
+
+## Tech Stack
+
+| Area | Tools |
+| --- | --- |
+| Framework | React 18, TypeScript |
+| Build tool | Vite |
+| 3D | Three.js, React Three Fiber |
+| Animation | GSAP |
+| Icons | react-icons |
+| Styling | Plain CSS with custom properties |
+| Hosting | Vercel |
+
+## Projects Featured
+
+- **Resume Matcher** — NLP-based resume-to-job-description scorer using sentence-transformer embeddings and cosine similarity ([live demo](https://resume-matcherz.streamlit.app))
+- **Titanic Survival Prediction** — Gaussian Naive Bayes classifier with a full scikit-learn pipeline
+- **Online Complaint Management System** — Java, JSP/Servlets, JDBC and MySQL
+- **Airline Management System** — Java, JSP/Servlets, JDBC and MySQL
+
+## Project Structure
+
+```
+shubh-portfolio/
+├── public/
+│   ├── favicon.svg
+│   └── resume.pdf
+├── src/
+│   ├── components/
+│   │   ├── three/
+│   │   │   └── HeroScene.tsx      # 3D scene
+│   │   ├── styles/                # One CSS file per component
+│   │   ├── Navbar.tsx
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── TechStack.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Education.tsx
+│   │   ├── Contact.tsx
+│   │   └── Footer.tsx
+│   ├── data/
+│   │   └── content.ts             # All site content
+│   ├── hooks/
+│   │   └── useInView.ts
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css                  # Design tokens and base styles
+├── index.html
+├── package.json
+└── vite.config.ts
+```
+
+## Getting Started
+
+**Prerequisites:** Node.js 18 or newer.
 
 ```bash
+# Clone the repository
+git clone https://github.com/ShubhGuPTA-cmd/shubh-portfolio.git
+cd shubh-portfolio
+
+# Install dependencies
 npm install
+
+# Start the dev server
 npm run dev
 ```
 
-Then open the local URL Vite prints (usually http://localhost:5173).
+Open the local URL printed in the terminal (usually `http://localhost:5173`).
 
-## Build for production
+### Production build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Where to edit content
+## Updating Content
 
-Everything text-based lives in one file: `src/data/content.ts`.
-No component code needs to change — just edit the values there:
+Nearly everything on the site is controlled from `src/data/content.ts`:
 
-- `profile` — name, tagline, subline, status line, resume path
-- `about` — bio paragraphs and stat numbers
-- `skillGroups` — your skills, grouped
-- `projects` — **placeholder data, replace with your real projects** (name, description, tech, GitHub/live links)
-- `timeline` — education / experience timeline
-- `certifications` — certifications list
-- `achievements` — **placeholder, add your real achievements**
-- `contact` — **placeholder, add your real email / GitHub / LinkedIn**
+- `profile` — name, tagline, status line, resume path
+- `about` — bio paragraphs and stats
+- `skillGroups` — skills by category
+- `projects` — project cards (set `featured: true` to highlight one)
+- `timeline` and `certifications` — education section
+- `contact` — email, GitHub, LinkedIn
 
-## Resume
+To change the resume, replace `public/resume.pdf` with the new file, keeping the same filename.
 
-Drop your resume PDF into `public/resume.pdf` (or change `profile.resumeUrl` in
-`content.ts` to point wherever you host it). The "Download Resume" button links there.
+## Deployment
 
-## Tech stack
+The site is deployed on Vercel and connected to this repository. Every push to `main` triggers an automatic redeploy.
 
-React 18 · TypeScript · Vite · Three.js · @react-three/fiber · GSAP · react-icons
+```bash
+git add .
+git commit -m "describe your change"
+git push
+```
+
+Vercel settings: Framework preset **Vite**, build command `npm run build`, output directory `dist`.
+
+## Contact
+
+- Email: [shubhiit557@gmail.com](mailto:shubhiit557@gmail.com)
+- GitHub: [ShubhGuPTA-cmd](https://github.com/ShubhGuPTA-cmd)
+- Portfolio: [shubh-gupta.vercel.app](https://shubh-gupta.vercel.app)
